@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TrioTrix Tech Solutions is a dynamic and innovative tech company focused on shaping the future of digital experiences. Our mission is to provide cutting-edge solutions that empower businesses and individuals to thrive in the rapidly evolving digital landscape."
+    />
+    <!-- OGP -->
+    <meta property="og:title" content="TrioTrix Tech Solutions" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="TrioTrix Tech Solutions is a dynamic and innovative tech company focused on shaping the future of digital experiences. Our mission is to provide cutting-edge solutions that empower businesses and individuals to thrive in the rapidly evolving digital landscape."
+    />
+    <meta
+      property="og:image"
+      content="https://Assets/triotrix_tech_solution_logo.jpg"
+    />
+    <meta property="og:url" content="https://triotrixtech.com" />
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <style>
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <title>Home | TrioTrix Tech Solutions</title>
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <!-- Navbar -->
+    <div class="bg-clrbg w-full font-poppins h-20 p-2">
+      <div
+        x-data="{ open: false }"
+        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 "
+      >
+        <div class="p-4 flex flex-row items-center justify-between">
+          <a
+            href="#"
+            class="text-2xl font-bold tracking-widest text-gray-900 uppercase"
+            >TrioTrix</a
+          >
+          <button
+            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+            @click="open = !open"
+          >
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+              <path
+                x-show="!open"
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+              <path
+                x-show="open"
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row bg-hvr-purple z-50 text-white md:bg-transparent md:text-black"
+        >
+          <a
+            class="relative group px-4 py-2 mt-2 font-semibold md:mt-0 md:ml-4 md:hover:text-purple"
+            href="#"
+            >Home
+            <span
+              class="absolute inset-x-0 bottom-0 h-0.5 bg-purple origin-left transform scale-x-0 transition-transform duration-500 lg:group-hover:scale-x-100"
+            ></span>
+          </a>
+          <div
+            @click.away="open = false"
+            class="relative"
+            x-data="{ open: false }"
+          >
+            <button
+              @click="open = !open"
+              class="flex flex-row items-center w-full relative group px-4 py-2 mt-2 font-semibold text-left md:w-auto md:inline md:mt-0 md:ml-4 md:hover:text-purple"
+            >
+              <span>Services</span>
+              <span
+                class="absolute inset-x-0 bottom-0 h-0.5 bg-purple origin-left transform scale-x-0 transition-transform duration-500 lg:group-hover:scale-x-100"
+              ></span>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <div
+              x-show="open"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="lg:absolute right-0 w-full mt-2 origin-top-right md:w-72"
+            >
+              <div class="lg:bg-white lg:rounded-md">
+                <a
+                  class="block lg:px-2 md: px-10 py-3 mt-2 text-md  md:mt-0 md:hover:text-white md:hover:bg-purple"
+                  href="#"
+                  >Custom Software Development</a
+                >
+                <a
+                  class="block lg:px-2 md: px-10 py-3 mt-2 text-md  md:mt-0 md:hover:text-white md:hover:bg-purple"
+                  href="#"
+                  >Web Application Development</a
+                >
+                <a
+                  class="block lg:px-2 md: px-10 py-3 mt-2 text-md  md:mt-0 md:hover:text-white md:hover:bg-purple"
+                  href="#"
+                  >Mobile Application Development</a
+                >
+                <a
+                  class="block lg:px-2 md: px-10 py-3 mt-2 text-md  md:mt-0 md:hover:text-white md:hover:bg-purple"
+                  href="#"
+                  >Quality Assurance & Testing</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <a
+            class="relative group px-4 py-2 mt-2 font-semibold md:mt-0 md:ml-4 md:hover:text-purple "
+            href="#"
+            >News & Blogs
+            <span
+              class="absolute inset-x-0 bottom-0 h-0.5 bg-purple origin-left transform scale-x-0 transition-transform duration-500 lg:group-hover:scale-x-100"
+            ></span>
+          </a>
+          <a
+            class="relative group px-4 py-2 mt-2 font-semibold md:mt-0 md:ml-4 md:hover:text-purple"
+            href="#"
+            >Careers
+            <span
+              class="absolute inset-x-0 bottom-0 h-0.5 bg-purple origin-left transform scale-x-0 transition-transform duration-500 lg:group-hover:scale-x-100"
+            ></span>
+          </a>
+          <a
+            class="relative group px-4 py-2 mt-2 font-semibold md:mt-0 md:ml-4 md:hover:text-purple"
+            href="#"
+            >About Us
+            <span
+              class="absolute inset-x-0 bottom-0 h-0.5 bg-purple origin-left transform scale-x-0 transition-transform duration-500 lg:group-hover:scale-x-100"
+            ></span>
+          </a>
+          <a
+            class="relative group px-4 py-2 mt-2 font-semibold md:mt-0 md:ml-4 md:hover:text-purple"
+            href="#contact"
+            >Contact Us
+            <span
+              class="absolute inset-x-0 bottom-0 h-0.5 bg-purple origin-left transform scale-x-0 transition-transform duration-500 lg:group-hover:scale-x-100"
+            ></span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+
+    <section
+      class=" w-full bg-no-repeat bg-cover xs:h-smcover md:h-lgcover"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url('/Assets/pic5.jpg');
+      ">
+      <div
+        class="flex flex-col items-center justify-between gap-6 md:pt-64 pt-32 px-4">
+        <span
+          class="font-medium xs:text-4xl  md:text-[42px] text-center text-white font-poppins  ">IT Lifecycle Services- Covering the Entire IT Lifecycle for Our Customers</span>
+
+        <span class="text-xl md:text-2xl font-normal font-poppins text-white text-center md:mb-8 mb-6"
+          >Get a perfect mash-up of devoted engineers, top-tier technical talents, and outstanding project ideas.</span>
+        <a href="" class=" text-white rounded-full px-6 py-2 text-lg font-semibold text-center w-fit  bg-gradient-to-r from-purple  to-purp flex items-center gap-2 modal-open" >
+          <span>Explore Possibilities</span>  
+          <span><i class='bx bx-message-square-add text-lg align-middle'></i></span>
+        </a>
+    
+      </div>
+    </section>
+
+  <section class="bg-clrbg flex flex-col gap-7 items-center justify-between pb-20">
+    <div class="text-center mt-24">
+      <p class="font-medium  md:text-[42px] text-3xl mb-3 ">A Complete Range Of Digital Services</p>
+      <p class="text-xl font-poppins font-normal md:px-36 p-5">TrioTrix offers a comprehensive suite of digital services for large businesses, small businesses, & startups, all of which are designed to achieve real-world results. Our work is aligned with our customers’ strategic goals owing to a custom-oriented approach and devotion to their success. We collaborate with our customers to develop sophisticated technology solutions using our consulting, engineering, and design skills – solutions that help them convert into contemporary digital enterprises.</p>
+    </div>
+  
+  <div class="w-[750px] h-[500px]">
+    <img src="Assets/pic2.jpg" alt="" class="w-full">
+  </div>
+  <a href="" class="modal-open text-white rounded-full mt-5 px-6 py-2 text-lg font-semibold text-center w-fit  flex items-center gap-2
+  bg-gradient-to-r from-purple  to-purp">
+    <span>Jump Start Your Next Project With TrioTrix</span>  
+    <span><i class='bx bx-message-square-add text-lg align-middle'></i></span>
+  </a>
+  </section>
+
+  <section class="flex flex-col gap-8 mt-28 items-center justify-between pb-20">
+    <p class="font-medium  md:text-[42px] text-3xl text-center  ">Our Core IT Lifecycle Services</p>
+    <p class="text-xl font-poppins font-normal text-center md:px-56 px-5">TrioTrix provides IT lifecycle services that adapt smoothly to your project objectives and business demands, from IT strategy consulting and detailed technological roadmaps through end-to-end creation of scalable solutions.</p>
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 md:mx-36 mx-7">
+
+    <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-6 text-center pb-5 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-clrbg">
+      <img src="Assets/custom.png" alt="" class="w-28 p-4 mx-auto ">
+      <h2 class="text-xl font-semibold mb-2 pt-4">Software Development</h2>
+      <p class="font-poppins pt-2 mb-4">TrioTrix helps clients create diverse and complex software solutions for their business needs. Listening to their ideas, we implement and create custom software solutions from scratch, designed especially for their business. With TrioTrix, clients get quality software sevices every time.
+</p>
+      <a href="#" class="text-purp font-semibold hover:underline">Learn More</a>
+    </div>
+
+    <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-6  text-center pb-5 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-clrbg">
+      <img src="Assets/web-development.png" alt="" class="w-32 p-4 mx-auto">
+      <h2 class="text-xl font-semibold mb-2">Web Development</h2>
+      <p class="font-poppins pt-2 mb-4">With our expert team of web developers, we create stunning and responsive websites that make a lasting impression. From eye-catching designs to robust functionality, we deliver custom web solutions that elevate your online presence and drive tangible results.</p>
+      <a href="#" class="text-purp font-semibold hover:underline">Learn More</a>
+    </div>
+
+    <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-6 text-center pb-5 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-clrbg">
+      <img src="Assets/android.png" alt="" class="w-32 p-4 mx-auto">
+      <h2 class="text-xl font-semibold mb-2">Android Development</h2>
+      <p class="font-poppins pt-2 mb-4">Our Android development team is passionate about crafting feature-rich and user-friendly mobile applications. Whether it's a business app, gaming, or utility, we ensure seamless performance and a delightful user experience on every Android device.</p>
+      <a href="#" class="text-purp font-semibold hover:underline">Learn More</a>
+    </div>
+
+    <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-6 text-center pb-5 cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-clrbg">
+      <img src="Assets/quality-control.png" alt="" class="w-28 p-4 mx-auto">
+      <h2 class="text-xl font-semibold mb-2 pt-4">Testing & QA</h2>
+      <p class="font-poppins pt-2 mb-4">Quality is at the core of everything we do. Our dedicated QA experts rigorously test and validate each product to guarantee impeccable performance, security, and reliability. We leave no stone unturned to deliver flawless software that exceeds expectations.</p>
+      <a href="#" class="text-purp font-semibold hover:underline pt-4">Learn More</a>
+    </div>
+  
+   </div>
+  </section>
+
+  <section class="bg-clrbg flex flex-col gap-8  items-center justify-between pt-28 md:pb-20 pb-6">
+    <p class="font-medium text-center  md:text-[42px] text-3xl ">Our Development Lifecycle Process</p>
+    <p class="text-xl font-poppins font-normal text-center md:px-80 px-5">We use best practice procedures and development methodologies as a basis for the organised and methodical creation of cutting-edge technological solutions.</p>
+ 
+    <div class="flex  flex-col md:flex-row items-center lg:justify-between md:gap-4 lg:gap-10 gap-4 md:mx-20 mx-4">
+      <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Planning</p>
+      <p class="hidden md:inline-block md:items-center"><i class='bx bxs-right-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="inline-block md:hidden"><i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+   
+    <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Designing</p>
+    <p class="hidden md:inline-block md:items-center"><i class='bx bxs-right-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+    <p class="inline-block md:hidden"><i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+    <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Defining</p>
+    <p class="hidden md:inline-block md:items-center"><i class='bx bxs-right-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+    <p class="inline-block md:hidden"><i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+    <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Building</p>
+    </div>
+
+    
+    <div>
+     <i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl ml-[45%] md:ml-[82%] lg:ml-[85%] pb-4 md:pb-8'></i>
+      <div class="flex flex-col md:flex-row items-center lg:justify-between md:gap-4 lg:gap-10 gap-4 md:mx-20 mx-4">
+      <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Maintenance</p>
+      <p class="hidden md:inline-block md:items-center"><i class='bx bxs-left-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="inline-block md:hidden"><i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Deployment</p>
+      <p class="hidden md:inline-block md:items-center"><i class='bx bxs-left-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="inline-block md:hidden"><i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Optimizing</p>
+      <p class="hidden md:inline-block md:items-center"><i class='bx bxs-left-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="inline-block md:hidden"><i class='bx bxs-down-arrow text-hvr-purple w-fit font-semibold text-3xl '></i></p>
+      <p class="bg-black w-64 text-center text-white xs:px-14 lg:px-14 md:px-4 py-6 text-2xl font-semibold">Testing</p>
+    </div>
+      </div>
+
+
+  </section>
+
+  <section class="flex flex-col md:flex-row gap-12 justify-between pt-24 pb-28 md:mx-36 mx-7">
+    <div class="basis-[48%]">
+      <p class="mb-8 font-medium md:text-[42px] text-3xl text-center md:text-left">Why Choose TrioTrix?</p>
+    <p  class="mb-8 text-xl font-poppins font-normal text-justify leading-9">At TrioTrix, we are dedicated to helping our clients harness the full potential of current technological capabilities. Our hands-on expertise spans a wide spectrum, including IoT, AI, AR & VR, big data, and machine learning.</p>
+    <img src="Assets/pic6.jpg" alt="">
+    </div>
+
+    <div  class="basis-[62%]">
+      <p class="mb-8 text-xl font-poppins font-normal text-justify leading-8">We recognize that staying at the forefront of technology is essential in today’s fast-paced world. Our team continually refines our approach to security and privacy to meet the most stringent standards and legal requirements. We understand the critical importance of safeguarding data and ensuring compliance with evolving laws and regulations.</p>
+      <p class="mb-8 text-xl font-poppins font-normal text-justify leading-8">Our commitment to excellence extends beyond providing services; it’s about delivering transformative solutions that drive your success. By integrating cutting-edge technologies and a robust security framework, we empower your business to thrive in a digital-first landscape.</p>
+      <p class="mb-8 text-xl font-poppins font-normal text-justify leading-8">With TrioTrix as your partner, you gain access to a wealth of knowledge and experience, enabling you to make informed decisions and leverage the latest innovations to stay ahead of the competition. Join us in embracing the future with confidence.</p>
+      <p class="text-xl font-poppins font-normal text-justify leading-8"><i class='bx bxs-square text-hvr-purple pr-2 text-sm'></i>We ensure the highest level of quality and security.</p>
+      <p class="text-xl font-poppins font-normal text-justify leading-8"><i class='bx bxs-square text-hvr-purple pr-2 text-sm'></i>We are a dependable and knowledgeable partner.</p>
+      <p class="text-xl font-poppins font-normal text-justify leading-8"><i class='bx bxs-square text-hvr-purple pr-2 text-sm'></i>We provide services at a reasonable price.</p>
+      <p class="text-xl font-poppins font-normal text-justify leading-8"><i class='bx bxs-square text-hvr-purple pr-2 text-sm'></i>We put the requirements of our customers first.
+      </p>
+    </div>
+    
+  </section>
+
+  <section class="bg-clrbg  gap-8 items-center justify-between pb-20 pt-20">
+    <div class="w-full my-1">
+      <p class="font-medium  md:text-[42px] text-3xl text-center mb-6">Frequently Asked Questions</p>
+      <ul class="flex flex-col md:px-60 px-4 w-full text-purp">
+        <li class="bg-white my-2 shadow-lg rounded-lg" x-data="accordion(1)">
+          <p
+            @click="handleClick()"
+            class="flex flex-row justify-between items-center font-bold text-[22px] p-8 cursor-pointer"
+          >
+            <span>1. What are IT Lifecycle Services?</span>
+            <svg
+              :class="handleRotate()"
+              class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          </p>
+          <div
+            x-ref="tab"
+            :style="handleToggle()"
+            class="border-l-2 border-purp overflow-hidden max-h-0 duration-500 transition-all"
+          >
+            <p class="px-6 pb-4 text-black font-poppins text-xl">
+              IT Lifecycle Services encompass a comprehensive range of offerings that cover the entire lifespan of IT solutions, from initial planning and development to ongoing maintenance and support.
+            </p>
+          </div>
+        </li>
+        <li class="bg-white my-2 shadow-lg rounded-lg" x-data="accordion(2)">
+          <p
+            @click="handleClick()"
+            class="flex flex-row justify-between items-center font-bold text-[22px] p-8 cursor-pointer"
+          >
+            <span>2. What stages are included in the IT Lifecycle Services?</span>
+            <svg
+              :class="handleRotate()"
+              class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          </p>
+          <div
+            x-ref="tab"
+            :style="handleToggle()"
+            class="border-l-2 border-purp overflow-hidden max-h-0 duration-500 transition-all"
+          >
+            <p class="px-6 pb-4 text-black font-poppins text-xl">
+              The IT Lifecycle services typically includes the following stages: requirements gathering and analysis, design and development, testing and quality assurance, deployment, ongoing maintenance, and eventual retirement or replacement.
+            </p>
+          </div>
+        </li>
+        <li class="bg-white my-2 shadow-lg rounded-lg" x-data="accordion(3)">
+          <p
+            @click="handleClick()"
+            class="flex flex-row justify-between items-center font-bold text-[22px] p-8 cursor-pointer"
+          >
+            <span>3. How can IT Lifecycle Services benefit my business?</span>
+            <svg
+              :class="handleRotate()"
+              class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          </p>
+          <div
+            x-ref="tab"
+            :style="handleToggle()"
+            class="border-l-2 border-purp overflow-hidden max-h-0 duration-500 transition-all"
+          >
+            <p class="px-6 pb-4 text-black font-poppins text-xl">
+              IT Lifecycle Services ensure that your IT solutions are well-planned, efficiently developed, thoroughly tested, and consistently supported throughout their lifecycle, resulting in increased reliability, performance, and cost-effectiveness.
+            </p>
+          </div>
+        </li>
+        <li class="bg-white my-2 shadow-lg rounded-lg" x-data="accordion(4)">
+          <p
+            @click="handleClick()"
+            class="flex flex-row justify-between items-center font-bold text-[22px] p-8 cursor-pointer"
+          >
+            <span>4. What types of IT solutions do you develop?</span>
+            <svg
+              :class="handleRotate()"
+              class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          </p>
+          <div
+            x-ref="tab"
+            :style="handleToggle()"
+            class="border-l-2 border-purp overflow-hidden max-h-0 duration-500 transition-all"
+          >
+            <p class="px-6 pb-4 text-black font-poppins text-xl">
+              We specialize in developing various IT solutions, including custom software applications, mobile apps, web applications, e-commerce platforms, enterprise systems, and more.
+            </p>
+          </div>
+        </li>
+        <li class="bg-white my-2 shadow-lg rounded-lg" x-data="accordion(5)">
+          <p
+            @click="handleClick()"
+            class="flex flex-row justify-between items-center font-bold text-[22px] p-8 cursor-pointer"
+          >
+            <span>5. How do you ensure the security of IT solutions and data?</span>
+            <svg
+              :class="handleRotate()"
+              class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          </p>
+          <div
+            x-ref="tab"
+            :style="handleToggle()"
+            class="border-l-2 border-purp overflow-hidden max-h-0 duration-500 transition-all"
+          >
+            <p class="px-6 pb-4 text-black font-poppins text-xl">
+              We implement stringent security measures, conduct regular security audits, and follow industry best practices to protect your IT solutions and data from cyber threats and vulnerabilities.
+            </p>
+          </div>
+        </li>
+        <li class="bg-white my-2 shadow-lg rounded-lg" x-data="accordion(6)">
+          <p
+            @click="handleClick()"
+            class="flex flex-row justify-between items-center font-bold text-[22px] p-8 cursor-pointer"
+          >
+            <span>6. How do you handle IT solution testing and quality assurance?</span>
+            <svg
+              :class="handleRotate()"
+              class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+              viewBox="0 0 20 20"
+            >
+              <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+            </svg>
+          </p>
+          <div
+            x-ref="tab"
+            :style="handleToggle()"
+            class="border-l-2 border-purp overflow-hidden max-h-0 duration-500 transition-all"
+          >
+            <p class="px-6 pb-4 text-black font-poppins text-xl">
+              Our dedicated quality assurance team conducts rigorous testing, including functional testing, performance testing, security testing, and user acceptance testing, to ensure that your IT solutions meet the highest quality standards.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="relative">
+      <img src="Assets/pic3.jpg" alt="" class="h-[540px] md:w-full" >
+ 
+    <div class="bg-black text-white p-8 absolute md:right-36 -bottom-24 md:w-[33%]">
+      <p class="text-3xl font-semibold mb-6 leading-[54px]">Start regulating your IT infrastructure more successfully.</p>
+      <p class="text-xl text-justify mb-6 leading-8">TrioTrix can assist you in putting together the appropriate service package for your applications based on their nature, business criticality, and particular requirements.</p>
+      <a href="" class=" text-white text-lg rounded-full px-6 py-2 font-semibold text-center w-fit ml-[30%] md:ml-0 bg-gradient-to-r from-purple  to-purp flex items-center gap-2 modal-open" >
+        <span>Schedule a Call</span>  
+        <span><i class='bx bx-message-square-add text-lg align-middle'></i></span>
+      </a>
+    </div>
+    </div>
+  </section>
+
+<section class="mt-28 pt-28">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:mx-36 mx-7 mb-16 items-center">
+  <div class="px-5">
+    <p class="mb-10 font-medium md:text-[42px] text-3xl text-center md:text-left leading-[54px]">What our Clients have to say?</p>
+    <a href="" class=" text-white text-lg rounded-full px-6 py-2 font-semibold text-center w-fit ml-[30%] md:ml-0 bg-gradient-to-r from-purple  to-purp flex items-center gap-2 modal-open" >
+        <span>Our Testimonials</span>  
+        <span><i class='bx bx-message-square-add text-lg align-middle'></i></span>
+    </a>
+
+  </div>
+  <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] p-8 text-xl text-justify">
+
+      <img src="Assets/left-quotes.png" alt="" class="w-12 h-12 inline align-sub">
+      <span class="font-poppins inline">Our project's testing was done to excellence. On our project, we diligently recorded all issues and bugs. TrioTrix comes highly recommended.</span>
+     <img src="Assets/right-quotes_.png" alt="" class="w-12 h-12 inline"> 
+    <p class="flex items-center gap-4 pt-6">
+      <img src="Assets/avatar-150x150.webp" alt="" class="rounded-full w-16">
+      <span>Nurun Nahar Fiha</span>
+    </p>
+  </div>
+  <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] p-8 text-xl text-justify">
+    <img src="Assets/left-quotes.png" alt="" class="w-12 h-12 inline align-sub">
+    <span class="font-poppins inline">Overall, the service was of high quality, & it was delivered on time & within budget. Team was experienced, which helped in the cloud services' faster adoption.</span>
+      <img src="Assets/right-quotes_.png" alt="" class="w-12 h-12 inline"> 
+      <p class="flex items-center gap-4 pt-6">
+      <img src="Assets/avatar-150x150.webp" alt="" class="rounded-full w-16">
+      <span>Forhad Hossain</span>
+    </p>
+  </div>
+</div>
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:mx-36 mx-7">
+
+  <div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-8 py-6 text-xl text-justify hover:shadow-[rgba(17,_17,_26,_0.35)_0px_0px_16px]">
+
+    <a href="" class="flex justify-between items-center pb-6">
+      <p class="text-gray-800 text-3xl font-medium">Blogs</p>
+      <i class='bx bxs-chevrons-right text-hvr-purple align-top text-4xl' ></i>
+    </a>
+    <p class="pb-5">Get hands-on the latest industry insights from our the of IT professionals.</p>
+    <img src="Assets/blog.webp" alt="">
+</div>
+
+<div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-8 py-6 text-xl text-justify  hover:shadow-[rgba(17,_17,_26,_0.35)_0px_0px_16px]">
+
+  <a href="" class="flex justify-between items-center pb-6">
+    <p class="text-gray-800 text-3xl font-medium">Our Services</p>
+    <i class='bx bxs-chevrons-right text-hvr-purple align-top text-4xl' ></i>
+  </a>
+  <p>Empowering clients with our products & services making real difference.</p>
+  <img src="Assets/service.png" alt="" class="">
+</div>
+
+<div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-8 py-6 text-xl text-justify  hover:shadow-[rgba(17,_17,_26,_0.35)_0px_0px_16px]">
+
+  <a href=""class="flex justify-between items-center pb-6">
+    <p class="text-gray-800 text-3xl font-medium">Technologies</p>
+    <i class='bx bxs-chevrons-right text-hvr-purple align-top text-4xl' ></i>
+  </a>
+  <p class="pb-5">Combining expert resources with the latest technologies to deliver high-quality software solutions.</p>
+  <img src="Assets/technologies.png" alt="" >
+</div>
+
+<div class=" rounded-md shadow-[rgba(17,_17,_26,_0.15)_0px_0px_16px] px-8 py-6 text-xl text-justify  hover:shadow-[rgba(17,_17,_26,_0.35)_0px_0px_16px]">
+
+  <a href="" class="flex justify-between items-center pb-6">
+    <p class="text-gray-800 text-3xl font-medium">Explore Jobs</p>
+    <i class='bx bxs-chevrons-right text-hvr-purple align-top text-4xl' ></i>
+  </a>
+  <p>Choose a career with us, and let’s build great, long term value together.</p>
+  <img src="Assets/job.jpg" alt="">
+</div>
+
+</div>
+</section>
+
+  <section id="contact" class="bg-black md:relative mt-32 md:pt-24 pb-28 md:h-[600px] h-[310px]">
+
+    <div class="md:absolute text-white md:right-44 md:top-32 md:w-[650px] md:p-16 p-10"> 
+      <p class="text-3xl md:text-[42px] font-semibold mb-6">ENSURE YOUR PROJECT’S SUCCESS WITH TRIOTRIX</p>
+      <p class="text-xl font-semibold mb-6">Speak to our professional, request an assessment, employ our solutions.</p>
+      <p class="text-xl font-semibold">Get your hands on our Exceptional Full Life Cycle IT services with end-to-end support & expert guidance.</p>
+    </div>
+    
+    <div  class="md:absolute text-white md:left-36 md:top-32  bg-white pt-16 pb-20 mb-6 shadow-2xl border-b-hvr-purple border-b-4">
+   
+      <span class="text-xl  text-white bg-hvr-purple px-10 py-3 font-poppins">Get in touch with our experts!</span>
+      <form action="https://formspree.io/f/xgejbkpq" method="post" class="px-10 pt-10">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" /> 
+        <div class="grid gap-5 md:gap-10 sm:grid-cols-2">
+          <div class="relative z-0">
+            <input type="text" name="name" class="peer block w-[250px] appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " required=""/>
+            <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your Name*</label>
+          </div>
+          <div class="relative z-0">
+            <input type="text" name="company" class="peer block w-[250px] appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " />
+            <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your Company</label>
+          </div>
+          <div class="relative z-0">
+            <input type="email" name="email" class="peer block w-[250px] appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " required=""/>
+            <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your email*</label>
+          </div>
+          <div class="relative z-0">
+            <input type="number" name="phone" class="peer block w-[250px] appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " />
+            <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your phone</label>
+          </div>
+          <div class="relative z-0 col-span-2">
+            <textarea name="message" rows="5" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" "></textarea>
+            <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Brief about your requirement</label>
+          </div>
+        </div>
+        <button type="submit" class="mt-5  text-white rounded-full px-6 py-2 text-lg font-semibold text-center w-fit  bg-gradient-to-r from-purple  to-purp">Submit Requirement</button>
+      </form>
+</div>
+
+
+  </section>
+
+  <footer  class="bg-clrbg mt-[530px] py-20 mb-5 md:mt-52">
+
+    <div class="grid grid-cols-2 gap-y-8 mx-20 md:flex justify-around font-semibold text-lg">
+
+      <div class="flex flex-col gap-3">
+        <p class="text-2xl">TRIOTRIX</p>
+        <a href="" >About TrioTrix</a>
+        <a href="" >Our Team</a>
+        <a href="" >How We Work</a>
+      
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="text-2xl text-gray-700">SERVICES</p>
+        <a href="" >Custom Software Development</a>
+        <a href="" > Web Application Development</a>
+        <a href="" >Mobile Application Development</a>
+        <a href="" >Quality Assurance & Testing</a>
+      </div>
+ 
+   
+      <div class="flex flex-col gap-3">
+        <p class="text-2xl text-gray-700">QUICK LINKS</p>
+        <a href="" >Why TrioTrix</a>
+        <a href="" >TrioTrix Blogs</a>
+        <a href="" >Testimonials</a>
+        <a href="">Media Kit</a>
+     
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <p class="text-2xl text-gray-700" >JOIN US</p>
+        <a href="" >Career at TrioTrix</a>
+       
+     
+      </div>
+
+      <div class="flex flex-col gap-3 col-span-2">
+        <p class="text-2xl text-gray-700">CONTACT</p>
+        <p>For general queries</p>
+        <a href="" ><i class='bx bx-envelope align-middle'></i> triotrixtechsolutionsofficial@gmail.com</a> <br>
+        <a href="" >TrioTrix Bangladesh</a>
+        <a href="" ><i class='bx bx-envelope align-middle'></i> triotrixtechsolutionsofficial@gmail.com</a>
+        <a href=""><i class='bx bxs-phone align-middle'></i> 01790026111</a>
+        <div  class="flex gap-5 text-xl">
+          <a href="https://www.facebook.com/TrioTrixTechSolutions"><i class='bx bxl-facebook'></i></a>
+          <a href="https://www.linkedin.com/company/triotrix-tech-solutions/"><i class='bx bxl-linkedin'></i></a>
+          <a href=""><i class='bx bxl-youtube'></i></a>
+        </div>
+     
+     
+    </div>
+      
+    </div>
+
+    <div class="mt-14">
+      <p class=" text-md text-gray-900 text-center">Copyright &copy; 2023 TrioTrix Tech Solutions</p>
+  </footer>
+  
+  <!--Modal-->
+  <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+    <div class="modal-overlay absolute w-full h-full bg-gray-950 opacity-50"></div>
+    
+    <div class="modal-container bg-white w-11/12 md:max-w-2xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
+    
+      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      <div class="modal-content py-4 text-left px-6">
+        <!--Title-->
+        <div class="flex justify-between items-center pb-3">
+          <p class="text-2xl font-bold"></p>
+          <div class="modal-close cursor-pointer z-50">
+            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!--Body-->
+      
+        <form action="https://formspree.io/f/xgejbkpq" method="post" class="mt-10 pb-6">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" /> 
+          <div class="grid gap-10 sm:grid-cols-2">
+              <div class="relative z-0">
+                <input type="text" name="name" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " required=""/>
+                <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your Name*</label>
+              </div>
+              <div class="relative z-0">
+                <input type="text" name="company" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " />
+                <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your Company</label>
+              </div>
+              <div class="relative z-0">
+                <input type="email" name="email" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " required=""/>
+                <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your email*</label>
+              </div>
+              <div class="relative z-0">
+                <input type="number" name="phone" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" " />
+                <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Your phone</label>
+              </div>
+              <div class="relative z-0 col-span-2">
+                <textarea name="message" rows="5" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-md text-gray-900 focus:border-purp focus:outline-none focus:ring-0" placeholder=" "></textarea>
+                <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-md text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purp peer-focus:dark:text-purp">Brief about your requirement</label>
+              </div>
+            </div>
+          <button type="submit" class="mt-5  text-white rounded-full px-6 py-2 text-lg font-semibold text-center w-fit  bg-gradient-to-r from-purple  to-purp">Submit Requirement</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    } 
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    
+     
+  </script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('accordion', {
+        tab: 0
+      });
+      
+      Alpine.data('accordion', (idx) => ({
+        init() {
+          this.idx = idx;
+        },
+        idx: -1,
+        handleClick() {
+          this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+        },
+        handleRotate() {
+          return this.$store.accordion.tab === this.idx ? 'rotate-180' : '';
+        },
+        handleToggle() {
+          return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : '';
+        }
+      }));
+    })
+  </script>
+</html>
